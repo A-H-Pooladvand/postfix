@@ -2,6 +2,8 @@
 
 namespace App\Http\Src;
 
+use Stack\Stack;
+
 class PostfixHelper
 {
     protected $operators = [
@@ -25,9 +27,9 @@ class PostfixHelper
 
     public function __construct()
     {
-        $this->stack = new Stack;
+        $this->stack = new Stack();
 
-        $this->output = new Stack;
+        $this->output = new Stack();
     }
 
     protected function split(string $expression): array

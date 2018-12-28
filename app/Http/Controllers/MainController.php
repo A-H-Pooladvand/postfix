@@ -9,7 +9,8 @@ class MainController extends Controller
 {
     public function index()
     {
-        $expression = "a+b*(c^d-e)^(f+g*h)-i";
+//        $expression = "a+b*(c^d-e)^(f+g*h)-i";
+        $expression = "A+(B*C-(D/E^F)*G)*H";
 
         $postfix = new Postfix();
 
