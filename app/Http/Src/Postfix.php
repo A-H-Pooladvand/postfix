@@ -13,6 +13,8 @@ class Postfix extends PostfixHelper
         }
 
         $this->unloadWord();
+
+        // Pop all the remaining elements from the stack
         while ($this->stack->peek() !== false) {
             $this->output->push($this->stack->pop());
         }
@@ -37,6 +39,7 @@ class Postfix extends PostfixHelper
             if ($this->stack->peek() === $this->openParentheses) {
                 $this->stack->pop();
             }
+            // If an operator is scanned
         } else {
             while ($this->stack->peek() !== false && $this->getPrecedence($character) <= $this->getPrecedence($this->stack->peek())) {
                 $this->output->push($this->stack->pop());
